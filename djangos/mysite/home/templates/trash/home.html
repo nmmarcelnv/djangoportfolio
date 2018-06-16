@@ -1,0 +1,30 @@
+<!--This is a base html, all children html will extend from this -->
+<html>
+  <head>
+    <!--The following links are from bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+    <!--The child html block head will go here -->
+    {% block head %}
+    <meta charset="utf-8">
+    <title></title>
+    {% endblock %}
+  </head>
+
+  <body>
+    <!--The child html block body will overwrite the content between block here -->
+    {% block body %}
+    {% endblock %}
+
+    <div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href='/'>Home</a></li>
+      </ul>
+    </div> <!--well bs-sidebar affix-->
+
+  </body>
+</html>
