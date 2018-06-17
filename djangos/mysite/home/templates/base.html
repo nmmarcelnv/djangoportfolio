@@ -9,15 +9,14 @@
 
 <!-- Load the static directory: see http://django-staticfiles.readthedocs.io/en/1.1/helpers/ -->
 {% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
 
 <!-- Bootstrap -->
-<link rel="stylesheet" type="text/css"  href="{{ STATIC_PREFIX }}css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}fonts/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" type="text/css"  href="{% static 'home/css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home/fonts/font-awesome/css/font-awesome.css' %}">
 
 <!-- Stylesheet
     ================================================== -->
-<link rel="stylesheet" type="text/css"  href="{{ STATIC_PREFIX }}css/style.css">
+<link rel="stylesheet" type="text/css"  href="{% static 'home/css/style.css' %}">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -69,7 +68,7 @@
       <hr>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-md-6"> <img src="{{ STATIC_PREFIX }}img/about.png" class="w3-circle" alt="Me" style="width:500px; border-radius:50%;"> </div>
+      <div class="col-xs-12 col-md-6"> <img src="{% static 'home/img/about.png' %}" class="w3-circle" alt="Me" style="width:500px; border-radius:50%;"> </div>
       <div class="col-xs-12 col-md-6">
         <div class="about-text">
           <h3>Welcome to my site!</h3>
@@ -168,7 +167,7 @@
               <div class="hover-text">
                 <h4>Time Series with Python</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/python.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/python.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 adipiscing">
@@ -177,7 +176,7 @@
               <div class="hover-text">
                 <h4>Basic Biostatistics Concepts</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/biostatistics.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/biostatistics.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 lorem">
@@ -186,7 +185,7 @@
               <div class="hover-text">
                 <h4>Python Map-Apply</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/python.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/python.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 lorem">
@@ -195,7 +194,7 @@
               <div class="hover-text">
                 <h4>Machine Learning with Python-Classification</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/python.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/python.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 adipiscing">
@@ -204,7 +203,7 @@
               <div class="hover-text">
                 <h4>Comparing Sample Distributions</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/biostatistics.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/biostatistics.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 dolor">
@@ -213,7 +212,7 @@
               <div class="hover-text">
                 <h4>Reading SaSData Sets</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/sas.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/sas.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 dolor">
@@ -222,16 +221,16 @@
               <div class="hover-text">
                 <h4>SAS-Controlling Input-Output</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/sas.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/sas.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 lorem">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{{ STATIC_PREFIX }}img/portfolio/08-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+            <div class="hover-bg"> <a href="{% static 'img/portfolio/08-large.jpg' %}" title="Project Title" data-lightbox-gallery="gallery1">
               <div class="hover-text">
                 <h4>Python</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/python.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/python.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 adipiscing">
@@ -240,7 +239,7 @@
               <div class="hover-text">
                 <h4>A bit on normal distributions</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/biostatistics.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/biostatistics.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 dolor">
@@ -249,7 +248,7 @@
               <div class="hover-text">
                 <h4>SAS-Append and Concatenate</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/sas.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/sas.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 dolor">
@@ -258,16 +257,16 @@
               <div class="hover-text">
                 <h4>Accumulating Variables-SAS</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/sas.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/sas.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 lorem">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{{ STATIC_PREFIX }}img/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+            <div class="hover-bg"> <a href="{% static 'blogs/img/portfolio/12-large.jpg' %}" title="Project Title" data-lightbox-gallery="gallery1">
               <div class="hover-text">
                 <h4>Python</h4>
               </div>
-              <img src="{{ STATIC_PREFIX }}blogs/img/python.png" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{% static 'blogs/img/python.png' %}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
       </div>
@@ -339,16 +338,16 @@
     <p>Copyright &copy; 2018 Care4ALL. Template from <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a></p>
   </div>
 </div>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/jquery.1.11.1.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/bootstrap.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/SmoothScroll.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/jquery.counterup.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/waypoints.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/nivo-lightbox.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/jquery.isotope.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/jqBootstrapValidation.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/contact_me.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/owl.carousel.js"></script>
-<script type="text/javascript" src="{{ STATIC_PREFIX }}js/main.js"></script>
+<script type="text/javascript" src="{% static 'home/js/jquery.1.11.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/SmoothScroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/jquery.counterup.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/waypoints.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/nivo-lightbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/jquery.isotope.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/jqBootstrapValidation.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/contact_me.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/owl.carousel.js' %}"></script>
+<script type="text/javascript" src="{% static 'home/js/main.js' %}"></script>
 </body>
 </html>
