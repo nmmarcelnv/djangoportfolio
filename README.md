@@ -1,1 +1,1 @@
-# This is a django project I build for my personal website
+# This is a django project I am building for my personal website
