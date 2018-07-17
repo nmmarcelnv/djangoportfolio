@@ -41,3 +41,11 @@ def AccumulateSAS(request):
 def Classification1(request):
     template_name = 'blogs/machinelearning1.html'
     return render(request, template_name)
+
+def Classification2(request):
+    template_name = 'blogs/machinelearning2.html'
+    return render(request, template_name)
+
+def JavaScript(request):
+    template_name = 'blogs/JavaScript.html'
+    return render(request, template_name)

@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'sas3', blogs.views.AppendConcatenate, name='sas3'),
     url(r'sas4', blogs.views.AccumulateSAS, name='sas4'),
     url(r'machinelearning1', blogs.views.Classification1, name='machinelearning1'),
+    url(r'machinelearning2', blogs.views.Classification2, name='machinelearning2'),
+    url(r'JavaScript', blogs.views.JavaScript, name='JavaScript')
 ]
