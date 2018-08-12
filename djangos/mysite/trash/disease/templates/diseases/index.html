@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Top 10 deadliest diseases in my country</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: lightgray; /*#f1f1f1;*/
+    color: black;
+}
+
+/* Style the header */
+.header {
+    /*background-color: #f1f1f1;*/
+    padding: 0px;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 600px;  /*Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.left {
+    width: 20%;
+    /*background-color: DodgerBlue;*/
+}
+
+/* Left and right column */
+.column.right {
+    width: 35%;
+    /*border-style: inset;*/
+    /*background-color: DodgerBlue;*/
+}
+/* Middle column */
+.column.middle {
+    width: 45%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: gray;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack
+ on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body class="body">
+  {% load static %}
+  {% get_static_prefix as STATIC_PREFIX %}
+
+<h4><a href="/" class="btn btn-custom btn-lg page-scroll">Back To My Home Page</a></h4>
+<div class="header">
+    <h3>Cause of Death and Global Mortality Surveillace</h3>
+</div>
+
+<p style="font-size:25px">Select a country of your choice below</p>
+
+
+<div class="row">
+  <div class="column left" background-color: DodgerBlue>
+    <form method="post">
+      {% csrf_token %}
+      <!-- render the form as paragraph-->
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="column middle" >
+    {% if plotfile == None %}
+        <img src="{{ STATIC_PREFIX }}diseases/img/myimage.gif" width="800" height="800" alt="">
+    {% else %}
+          <img src="{{ STATIC_PREFIX }}diseases/plots/{{plotfile}}" width="800" height="800" alt="">
+    {% endif %}
+  </div>
+  <div class="column right">
+    <p>It's unfortunate that millions of individuals around the world live with some sort of disease condition,
+      be it heart disease, HIV/AIDS, Cancer, Cholera, you name it. For the purpose of raising awareness,
+      the World Health Organization (WHO) collects data on disease burden and cause of deaths in different countries around the world
+      and the data is made available in their data <a href="http://www.who.int/healthinfo/global_burden_disease/estimates/en/index2.html">repository</a> as Excel files.</p>
+    <p>
+      It's one thing to collect data but what good is it if we can't make good use it.
+      First, I wanted to be able to quickly view top killer diseases in any given country using survey data collected by the WHO.
+      Since these are combersome Excel files with hundreds of columns and rows, I decided to write a code that downloads the data from the WHO, cleans it,
+      retrieves the top ten killer diseases for the country requested, and creates a plot for visualization.</b>
+    <p>In the future, I would like extend this project to perform more interesting tasks such as comparing mortality rates between regions,
+      and intergrating different health related datasets to find correlations between mortality and socio-economic factors, mortality and environmental factors,
+      and mortality and life styles. If you're a public health student or professional, I hope you find
+      something useful here. If you have cool ideas to improve people's health, I would love to hear from you. For now, you're just one click away from
+      discovering the top killer diseases in your region. Have fun and be healthy!</p>
+    <hr> <!-- This is a horozontal line -->
+    <p> Useful links :
+      <li><a href="http://www.healthdata.org/canada">Institute of Health Metric and Evaluation</a></li>
+      <li><a href="https://www.cdc.gov/globalhealth/countries">Center of Disease Control and Prevention</a></li>
+      <li><a href="http://www.who.int/healthinfo/global_burden_disease/estimates/en/index2.html">World Health Organization</a></li>
+    </p>
+
+</div>
+</div>
+
+
+</body>
+</html>

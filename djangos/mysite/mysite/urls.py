@@ -20,6 +20,8 @@ from django.conf.urls import url, include
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('^', include('home.urls')),
-    url('^diseases/', include('diseases.urls')),
+    #url('^diseases/', include('diseases.urls')),
+    url('^disease/', include('disease.urls')),
     url('^blogs/', include('blogs.urls')),
+    url('^epilearn/', include('epilearn.urls')),
 ]

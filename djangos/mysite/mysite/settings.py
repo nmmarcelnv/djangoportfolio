@@ -23,8 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%9_0=dqz7696+%*@u902l+-7s&#00!l91-y=8k!x7ttw)4ufg('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 ALLOWED_HOSTS = []
 
 
@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home',
-    'diseases',
+    #'diseases',
+    'disease',
     'blogs',
+    'epilearn',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
