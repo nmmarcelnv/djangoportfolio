@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standout</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Load the static directory: see http://django-staticfiles.readthedocs.io/en/1.1/helpers/ -->
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+<link rel="stylesheet" type="text/css"  href="{{ STATIC_PREFIX }}diseases/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}diseases/fonts/font-awesome/css/font-awesome.css">
+
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="{{ STATIC_PREFIX }}diseases/css/style.css">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<!-- Navigation
+    ==========================================-->
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> 
+      <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand page-scroll" href="#page-top">Care4ALL</a> 
+   </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/" class="page-scroll">Home</a></li>
+        <!--<li><a href="#services" class="page-scroll">Projects</a></li> -->
+        <!--<li><a href="#portfolio" class="page-scroll">Gallery</a></li> -->
+        <!-- <li><a href="#testimonials" class="page-scroll">Resume</a></li> -->
+        <!-- <li><a href="#contacts" class="page-scroll">Contact</a></li> -->
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<!-- Header -->
+<header id="header">
+  <div class="intro">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="intro-text">
+            <a href="/" class="btn btn-custom btn-lg page-scroll">Home</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="about-text">
+          <h3>Welcome!</h3>
+          <p>I am fascinated by the idea of conducting science across disciplines and always excited
+            to learn how technical skills can be used to tackle challenging problems in other
+            disciplines such as Biology and Public Health. Here, is a litle tool that I have developed
+            to track top killer diseases around the world. I hate that thousands of individuals around
+            the world are currently suffering or dying from diseases. I hope this tool is useful to
+            to public health students, medical students. If you are a publich health professional who
+            would love to make use of the data available but lack the technical skills, I would be happy
+            to help. Shhot me an email! This project is being developed using data from the
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    	  <form method="post">
+      	    {% csrf_token %}
+            <!-- render the form as paragraph-->
+      	    {{ form.as_p }}
+      	    <button type="submit">Submit</button>
+        </form>
+	      {% if plotfile == None %}
+	         <img src="{{ STATIC_PREFIX }}diseases/img/myimage.gif" alt="">
+	      {% else %}
+	         <img src="{{ STATIC_PREFIX }}diseases/plots/{{plotfile}}" width="600" height="600" alt="">
+        {% endif %}
+    	   <!-- print out what the user has entered in the form above -->
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="footer">
+  <div class="container text-center">
+    <p>Copyright &copy; 2018 Care4ALL. Template from <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a></p>
+  </div>
+</div>
+</body>
+</html>

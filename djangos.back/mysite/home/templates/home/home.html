@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<!-- What we include between the block here will go in the
+block body in the base.html -->
+
+{% block body %}
+<div class="container">
+    <!-- Basic html form -->
+    <form method="post">
+      {% csrf_token %}
+      <!-- render the form as paragraph-->
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+    <!-- print out what the user has entered in the form above -->
+</div>
+{% endblock %}

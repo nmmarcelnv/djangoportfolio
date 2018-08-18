@@ -1,0 +1,8 @@
+<!-- instead of post.id, pass the path to blog html as a variable -->
+<h3><a href="/blogs/{{post.id}}">{{ post.title }}</a></h3>
+<h6> on {{ post.date }}</h6>
+
+<div class = "container">
+	{{ post.body|safe|linebreaks}}
+</div>
+<br><br>
