@@ -1,0 +1,15 @@
+<!DOCTYPE HTML >
+<html>
+<head>
+
+</head>
+
+<body>
+<h2>Welcome to my tutorials</h2>	
+{% for post in object_list %}
+    <h5>{{ post.date|date:"Y-m-d" }}<a href="/blogs/{{post.id}}">  {{ post.title }}</a></h5>
+{% endfor %}
+
+</body>
+
+</html>
