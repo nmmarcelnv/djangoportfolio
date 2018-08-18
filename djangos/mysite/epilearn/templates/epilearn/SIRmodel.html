@@ -22,25 +22,23 @@ function nameit(window) {
 
 var remote = null;
 
-       function image() {
+function image() {
 
-           remote = window.open('', 'image', 'width=220,height=340,resizable=yes');
+  remote = window.open('', 'image', 'width=220,height=340,resizable=yes');
 
-           if (remote != null) {
+  if (remote != null) {
 
-           if (remote.opener == null) {
+    if (remote.opener == null) {
 
-               remote.opener = self;
+        remote.opener = self;
 
-               }
+    }
 
-           remote.location.href = "MS_program.html"
+    remote.location.href = "MS_program.html"
 
-           remote.focus()
-
-           }
-       }
-
+    remote.focus()
+  }
+}
 
 
 function MM_openBrWindow(theURL,winName,features) { //v2.0
@@ -55,14 +53,11 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
 <!--GEM META TAGS-->
 
-
-
 <meta name="DC.package.begin" content="1" />
 
 
 {% load static %}
 </head>
-
 
 
 <body bgcolor="#FDF5E6" background="dnabckgd2.gif" LINK=#0000FF VLINK=#0000FF alink="#0000FF">
@@ -71,45 +66,38 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 <table width="406" border="1" align="center">
 
   <tr>
-	
+
     <!-- The left Side Starts Here?-->
-    <td valign="top" width="131" bgcolor="#CCCC99"><div align="left">
-       
+    <td valign="top" width="131" bgcolor="#CCCC99">
+      <div align="left">
+
         <table width="131" border="0" cellpadding="2">
 
           <tr valign="bottom" align="center">
-		<!-- The left Activities-->
+		          <!-- The left Activities-->
             <td height="15"><img src="{% static 'epilearn/img/epidemiology.jpg' %}" alt="#" width="126" height="80" /></td>
 
           </tr>
 
 
           <tr valign="middle">
-		<!-- The left About Us -->
+		          <!-- The left About Us -->
           </tr>
 
-           <!-- removed stuff from the left side here -->
-
+            <!-- removed stuff from the left side here -->
         </table>
+      </div>
+    </td> <!-- The left Side Ends Here?-->
 
-        <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b><a href="biochemistry/biochemistry.html#activities" target="_parent"><br />
 
-        </a></b></font></p>
-
-      </div></td> <!-- The left Side Ends Here?--> 
-
-     
      <!-- The Middle Side Starts Here?-->
-    <td valign="top" colspan="2" align="left" cellpadding="10"><p align="center"><img src="{% static 'epilearn/img/epilearn.gif' %}" alt="EpiLearn" width="450" height="338" border="0" /><br />
+    <td valign="top" colspan="2" align="left" cellpadding="10"><p align="center"> 
 
-        <a href="/epilearn/sirmodel" target="_blank">Click Here to Play with model parameters</a> <hr>
-
-
-      <center>
-
-        <a href="javascript:;">Problem Sets &amp; Tutorials (Coming soon...)</a> <hr>
-
-      </center>
+	<img src="{% static 'epilearn/img/SIRmodel.gif' %}" alt="EpiLearn" width="450" height="338" border="0" /><br />
+	
+	<a href="/blogs/SIRmodel">Click Here to Learn More about the SIR model</a> <br />
+        <a href="#">Enter model parameters below to see how the model changes</a> <hr> 
+        
 
       <table width="406"  border="0" cellpadding="2">
 
@@ -117,24 +105,30 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
           <td valign="top">
 
+		<form method="post">
+                    {% csrf_token %}
+            	    <!-- render the form as paragraph-->
+            	    {{ form.as_p }} 
+            	    <button type="submit" style="background-color: #4CAF50; font-size: 16px;">Click Here to generate the plot</button>
+        	</form>
 
-              <p><b><a href="#"><img src="{% static 'epilearn/img/epidemic.jpg' %}" alt="Viruses and Bacteria" width="100" height="100" vspace="5" border="0" align="right" /></a>
-	      <a href="#">Basics of Epidemic (under construction...)</a></b>  <br>
-              basic knowledge of epidemic, infectious diseases, <br> 
-              epidemic models, history of <br>
-              vaccines, & interventions.<a href="http://www.biologia.arizona.edu/DEFAULT.HTML" target="_blank"><i>
+                {% if result == None %}
+        		<!--img src="{% static 'epilearn/img/SIRmodel.png' %}" width="450" height="338" alt="" -->
+    		{% else %}
+       			<img src="{% static 'epilearn/img/SIRmodel.png' %}" width="450" height="388" alt="" -->
+    		{% endif %}
 
-              </p>
 
-            </div>
 	    <hr>
 
             <blockquote>
 		<!-- put text here to show as block quotes -->
             </blockquote>
 
+	<!-- start block comment
+ 
 	<div align="left"><b><a href="#"><img src="{% static 'epilearn/img/HowisHIVandAIDStransmitted.jpg' %}" alt="HIV/AIDS" width="100" height="100" vspace="5" border="0" align="right" /></a>
-		<a href="#">HIV/AIDS (Coming soon...)</a></b> <br> 
+		<a href="#">HIV/AIDS</a></b> <br>
 		What you need to know about HIV, <br>
 		where it came from, <br>
 		most affected parts of the world, <br>
@@ -143,34 +137,34 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         </div>
 
 	<div align="left"><b><a href="#"><img src="{% static 'epilearn/img/vector_borne_diseases.jpg' %}" alt="Malaria Mosquito" width="100" height="100" vspace="5" border="0" align="right" /></a>
-                <a href="#">Malaria (Coming soon...)</a></b> <br>                      
+                <a href="#">Malaria</a></b> <br>
                 Malaria as an example of a vector-borne disease, <br>
                 transmission, treatment, <br>
                 control, statistics, <br>
                 <hr>
         </div>
 
-
+ 	end block comment -->
 
         <tr>
 
-          <td><p align="center"><font size=3><a href="/">My Home Page</a> <br />
+          <td><p align="center"><font size=4><a href="\">My Hope Page</a> <br />
 
               <a href="https://www.linkedin.com/in/valery-marcel/" target="_blank">LinkedIn</a><br />
 
-              </font><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><a href="https://github.com/nmmarcelnv" target="_blank">Github</a></font><br />
+              </font><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><a href="https://github.com/nmmarcelnv" target="_blank">Github</a></font><br />
 
 
               All rights reserved.</font></p></td>
 
         </tr>
 
-      </table></td>
+      </table>
+    </td>
 
 
-    
+
     <td valign="top" width="142" bgcolor="#CCCC99"><table width="130" border="0" cellpadding="2">
-
 
         <tr>
 		<!-- empty -->
@@ -179,7 +173,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
         <tr>
 
-          <td valign="top"><div align="left"> <img src="{% static 'epilearn/img/networks.jpg' %}" alt="Epidemic Networks" width="126" height="80" onClick="MM_openBrWindow('#','YoungExplorers','width=450,height=350')" /></div></td>
+          <td valign="top"><div align="left"> <img src="{% static 'epilearn/img/networks.jpg' %}" alt="Epidemic Networks" width="126" height="80" /></div></td>
 
         </tr>
 
@@ -206,5 +200,3 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 </body>
 
 </html>
-
-
